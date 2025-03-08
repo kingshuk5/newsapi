@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export async function GET() {
   try {
     // Use absolute path from public/
-    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/data.json`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/data.json`);
     const data = await response.json();
 
     return NextResponse.json(data, { status: 200 });
